@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90129B01CC776BD003623C6 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90129AF1CC776BD003623C6 /* PianoController.swift */; };
 		B91B8F771CBAD2930067BA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F761CBAD2930067BA83 /* AppDelegate.swift */; };
 		B91B8F791CBAD2930067BA83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F781CBAD2930067BA83 /* ViewController.swift */; };
 		B91B8F7C1CBAD2930067BA83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7A1CBAD2930067BA83 /* Main.storyboard */; };
 		B91B8F7E1CBAD2930067BA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7D1CBAD2930067BA83 /* Assets.xcassets */; };
 		B91B8F811CBAD2930067BA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7F1CBAD2930067BA83 /* LaunchScreen.storyboard */; };
+		B91B8F8B1CBAD33C0067BA83 /* PianoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F881CBAD33C0067BA83 /* PianoModel.swift */; };
+		B91B8F8C1CBAD33C0067BA83 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F891CBAD33C0067BA83 /* PianoView.swift */; };
+		B98037901CDA4B8000073996 /* OctaveControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B980378F1CDA4B8000073996 /* OctaveControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90129AF1CC776BD003623C6 /* PianoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
 		B91B8F731CBAD2920067BA83 /* Piano View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91B8F761CBAD2930067BA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B91B8F781CBAD2930067BA83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		B91B8F7D1CBAD2930067BA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B91B8F801CBAD2930067BA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B91B8F821CBAD2930067BA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B91B8F881CBAD33C0067BA83 /* PianoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoModel.swift; sourceTree = "<group>"; };
+		B91B8F891CBAD33C0067BA83 /* PianoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
+		B980378F1CDA4B8000073996 /* OctaveControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OctaveControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +64,24 @@
 			children = (
 				B91B8F761CBAD2930067BA83 /* AppDelegate.swift */,
 				B91B8F781CBAD2930067BA83 /* ViewController.swift */,
+				B91B8F8E1CBAD3480067BA83 /* Piano */,
 				B91B8F7A1CBAD2930067BA83 /* Main.storyboard */,
 				B91B8F7D1CBAD2930067BA83 /* Assets.xcassets */,
 				B91B8F7F1CBAD2930067BA83 /* LaunchScreen.storyboard */,
 				B91B8F821CBAD2930067BA83 /* Info.plist */,
 			);
 			path = "Piano View";
+			sourceTree = "<group>";
+		};
+		B91B8F8E1CBAD3480067BA83 /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				B91B8F881CBAD33C0067BA83 /* PianoModel.swift */,
+				B91B8F891CBAD33C0067BA83 /* PianoView.swift */,
+				B90129AF1CC776BD003623C6 /* PianoController.swift */,
+				B980378F1CDA4B8000073996 /* OctaveControl.swift */,
+			);
+			name = Piano;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B91B8F791CBAD2930067BA83 /* ViewController.swift in Sources */,
+				B91B8F8C1CBAD33C0067BA83 /* PianoView.swift in Sources */,
+				B90129B01CC776BD003623C6 /* PianoController.swift in Sources */,
 				B91B8F771CBAD2930067BA83 /* AppDelegate.swift in Sources */,
+				B91B8F8B1CBAD33C0067BA83 /* PianoModel.swift in Sources */,
+				B98037901CDA4B8000073996 /* OctaveControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +313,7 @@
 				B91B8F871CBAD2930067BA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
