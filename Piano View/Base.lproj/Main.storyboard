@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-04-mH8" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-04-mH8" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="378.5" width="320" height="189.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="whiteKeyColor">
@@ -37,8 +37,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-nb-FKP">
-                                <rect key="frame" x="0.0" y="370" width="600" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-nb-FKP">
+                                <rect key="frame" x="0.0" y="350.5" width="320" height="29"/>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.074509803921568626" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="1"/>

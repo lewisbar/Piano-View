@@ -15,10 +15,10 @@ import UIKit
 
 protocol PianoViewDelegate: class {
     func createPianoViewOutlet(_ sender: PianoView)
-    func touchesBeganOnKey(_ key: UIView)
-    func touchesMovedOnKey(_ key: UIView)
-    func touchesEndedOnKey(_ key: UIView)
-    func touchesRemovedFromKey(_ key: UIView)
+    func touchesBegan(onKey: UIView)
+    func touchesMoved(onKey: UIView)
+    func touchesEnded(onKey: UIView)
+    func touchesRemoved(fromKey: UIView)
 }
 
 @IBDesignable class PianoView: UIView {
@@ -158,7 +158,7 @@ protocol PianoViewDelegate: class {
             for touch in touches {
                 let point = touch.location(in: key)
                 if key.point(inside: point, with: event) {
-                    delegate?.touchesBeganOnKey(key)
+                    delegate?.touchesBegan(onKey: key)
                     setKeyToPressedState(key)
                     return
                 }
@@ -174,21 +174,21 @@ protocol PianoViewDelegate: class {
             for blackKey in blackKeys {
                 let point = touch.location(in: blackKey)
                 if blackKey.point(inside: point, with: event) {
-                    delegate?.touchesMovedOnKey(blackKey)
+                    delegate?.touchesMoved(onKey: blackKey)
                     setKeyToPressedState(blackKey)
                     touchIsOnBlackKey = true
                 } else if blackKey.backgroundColor != blackKeyColor {
-                    delegate?.touchesRemovedFromKey(blackKey)
+                    delegate?.touchesRemoved(fromKey: blackKey)
                     setKeyToReleasedState(blackKey)
                 }
             }
             for whiteKey in whiteKeys {
                 let point = touch.location(in: whiteKey)
                 if !touchIsOnBlackKey && whiteKey.point(inside: point, with: event) {
-                    delegate?.touchesMovedOnKey(whiteKey)
+                    delegate?.touchesMoved(onKey: whiteKey)
                     setKeyToPressedState(whiteKey)
                 } else if whiteKey.backgroundColor != whiteKeyColor {
-                    delegate?.touchesRemovedFromKey(whiteKey)
+                    delegate?.touchesRemoved(fromKey: whiteKey)
                     setKeyToReleasedState(whiteKey)
                 }
             }
@@ -202,7 +202,7 @@ protocol PianoViewDelegate: class {
             for touch in touches {
                 let point = touch.location(in: key)
                 if key.point(inside: point, with: event) {
-                    delegate?.touchesEndedOnKey(key)
+                    delegate?.touchesEnded(onKey: key)
                     setKeyToReleasedState(key)
                     return
                 }

@@ -20,15 +20,15 @@ class PianoModel {
     ]
     
     
-    func playNote(_ note: String) {
+    func play(_ note: String) {
         print("Playing \(note) (\(frequencies[note]!) Hz)")
     }
     
-    func releaseNote(_ note: String) {
+    func release(_ note: String) {
         print("\(note) released")
     }
     
-    func playPhrase(_ notes: [String], tempo: Int) {
+    func play(_ phrase: [String], tempo: Int) {
         
     }
 

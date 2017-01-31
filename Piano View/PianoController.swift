@@ -18,19 +18,19 @@ class PianoController: PianoViewDelegate {
         pianoView = sender
     }
     
-    func touchesBeganOnKey(_ key: UIView) {
-        pianoModel.playNote(notes[key.tag] + "4")
+    func touchesBegan(onKey key: UIView) {
+        pianoModel.play(notes[key.tag] + "4")
     }
     
-    func touchesMovedOnKey(_ key: UIView) {
-        pianoModel.playNote(notes[key.tag] + "4")
+    func touchesMoved(onKey key: UIView) {
+        pianoModel.play(notes[key.tag] + "4")
     }
     
-    func touchesEndedOnKey(_ key: UIView) {
-        pianoModel.releaseNote(notes[key.tag] + "4")
+    func touchesEnded(onKey key: UIView) {
+        pianoModel.release(notes[key.tag] + "4")
     }
     
-    func touchesRemovedFromKey(_ key: UIView) {
-        pianoModel.releaseNote(notes[key.tag] + "4")
+    func touchesRemoved(fromKey key: UIView) {
+        pianoModel.release(notes[key.tag] + "4")
     }
 }
