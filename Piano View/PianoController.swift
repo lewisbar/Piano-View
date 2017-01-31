@@ -18,6 +18,7 @@ class PianoController: PianoViewDelegate {
         pianoView = sender
     }
     
+    // TODO: Display the correct octave
     func touchesBegan(onKey key: UIView) {
         pianoModel.play(notes[key.tag] + "4")
     }
