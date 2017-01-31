@@ -12,7 +12,7 @@ class OctaveControl: UISegmentedControl {
     
     let octaves = ["1", "2", "3", "4", "5", "6"]
     
-    override init(items: [AnyObject]?) {
+    override init(items: [Any]?) {
         super.init(items: items)
     }
     

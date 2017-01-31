@@ -14,11 +14,11 @@
 import UIKit
 
 protocol PianoViewDelegate: class {
-    func createPianoViewOutlet(sender: PianoView)
-    func touchesBeganOnKey(key: UIView)
-    func touchesMovedOnKey(key: UIView)
-    func touchesEndedOnKey(key: UIView)
-    func touchesRemovedFromKey(key: UIView)
+    func createPianoViewOutlet(_ sender: PianoView)
+    func touchesBeganOnKey(_ key: UIView)
+    func touchesMovedOnKey(_ key: UIView)
+    func touchesEndedOnKey(_ key: UIView)
+    func touchesRemovedFromKey(_ key: UIView)
 }
 
 @IBDesignable class PianoView: UIView {
@@ -42,23 +42,23 @@ protocol PianoViewDelegate: class {
     var ais = UIView()
     var b = UIView()
     
-    @IBInspectable var whiteKeyColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable var whiteKeyColor: UIColor = UIColor.white {
         didSet {
-            for (_, key) in whiteKeys.enumerate() {
+            for (_, key) in whiteKeys.enumerated() {
                 key.backgroundColor = whiteKeyColor
             }
         }
     }
-    @IBInspectable var whiteKeyBorderColor: UIColor = UIColor.blackColor() {
+    @IBInspectable var whiteKeyBorderColor: UIColor = UIColor.black {
         didSet {
-            for (_, key) in whiteKeys.enumerate() {
-                key.layer.borderColor = whiteKeyBorderColor.CGColor
+            for (_, key) in whiteKeys.enumerated() {
+                key.layer.borderColor = whiteKeyBorderColor.cgColor
             }
         }
     }
-    @IBInspectable var blackKeyColor: UIColor = UIColor.blackColor() {
+    @IBInspectable var blackKeyColor: UIColor = UIColor.black {
         didSet {
-            for (_, key) in blackKeys.enumerate() {
+            for (_, key) in blackKeys.enumerated() {
                 key.backgroundColor = blackKeyColor
             }
         }
@@ -82,16 +82,16 @@ protocol PianoViewDelegate: class {
         for key in whiteKeys {
             key.backgroundColor = whiteKeyColor
             key.layer.borderWidth = 1
-            key.layer.borderColor = whiteKeyBorderColor.CGColor
+            key.layer.borderColor = whiteKeyBorderColor.cgColor
             addSubview(key)
-            key.userInteractionEnabled = true
+            key.isUserInteractionEnabled = true
         }
         // Add black keys.
         blackKeys += [cis, dis, fis, gis, ais]
         for key in blackKeys {
             key.backgroundColor = blackKeyColor
             addSubview(key)
-            key.userInteractionEnabled = true
+            key.isUserInteractionEnabled = true
         }
         allKeys = blackKeys + whiteKeys
         delegate?.createPianoViewOutlet(self)
@@ -124,7 +124,7 @@ protocol PianoViewDelegate: class {
         var whiteKeyFrame = CGRect(x: 0, y: 0, width: whiteKeyWidth, height: whiteKeyHeight)
 
         // Offset each white key's origin by the width of the key.
-        for (index, key) in whiteKeys.enumerate() {
+        for (index, key) in whiteKeys.enumerated() {
             whiteKeyFrame.origin.x = CGFloat(index) * whiteKeyWidth
             key.frame = whiteKeyFrame
         }
@@ -137,7 +137,7 @@ protocol PianoViewDelegate: class {
         let blackKeyHeight = whiteKeyHeight/2
         var blackKeyFrame = CGRect(x: 0, y: 0, width: blackKeyWidth, height: blackKeyHeight)
         
-        for (index, key) in blackKeys.enumerate() {
+        for (index, key) in blackKeys.enumerated() {
             switch index {
             case 0: blackKeyFrame.origin.x = CGFloat(1*whiteKeyWidth - blackKeyWidth/2)
             case 1: blackKeyFrame.origin.x = CGFloat(2*whiteKeyWidth - blackKeyWidth/2)
@@ -151,13 +151,13 @@ protocol PianoViewDelegate: class {
     }
     
     //MARK: Handle touch events
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
 
         for key in allKeys {
             for touch in touches {
-                let point = touch.locationInView(key)
-                if key.pointInside(point, withEvent: event) {
+                let point = touch.location(in: key)
+                if key.point(inside: point, with: event) {
                     delegate?.touchesBeganOnKey(key)
                     setKeyToPressedState(key)
                     return
@@ -166,14 +166,14 @@ protocol PianoViewDelegate: class {
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         
         for touch in touches {
             var touchIsOnBlackKey = false
             for blackKey in blackKeys {
-                let point = touch.locationInView(blackKey)
-                if blackKey.pointInside(point, withEvent: event) {
+                let point = touch.location(in: blackKey)
+                if blackKey.point(inside: point, with: event) {
                     delegate?.touchesMovedOnKey(blackKey)
                     setKeyToPressedState(blackKey)
                     touchIsOnBlackKey = true
@@ -183,8 +183,8 @@ protocol PianoViewDelegate: class {
                 }
             }
             for whiteKey in whiteKeys {
-                let point = touch.locationInView(whiteKey)
-                if !touchIsOnBlackKey && whiteKey.pointInside(point, withEvent: event) {
+                let point = touch.location(in: whiteKey)
+                if !touchIsOnBlackKey && whiteKey.point(inside: point, with: event) {
                     delegate?.touchesMovedOnKey(whiteKey)
                     setKeyToPressedState(whiteKey)
                 } else if whiteKey.backgroundColor != whiteKeyColor {
@@ -195,13 +195,13 @@ protocol PianoViewDelegate: class {
         }
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
         for key in allKeys {
             for touch in touches {
-                let point = touch.locationInView(key)
-                if key.pointInside(point, withEvent: event) {
+                let point = touch.location(in: key)
+                if key.point(inside: point, with: event) {
                     delegate?.touchesEndedOnKey(key)
                     setKeyToReleasedState(key)
                     return
@@ -211,11 +211,11 @@ protocol PianoViewDelegate: class {
     }
     
     //MARK: Color changes
-    func setKeyToPressedState(key: UIView) {
-        key.backgroundColor = UIColor.grayColor()
+    func setKeyToPressedState(_ key: UIView) {
+        key.backgroundColor = UIColor.gray
     }
     
-    func setKeyToReleasedState(key: UIView) {
+    func setKeyToReleasedState(_ key: UIView) {
         if whiteKeys.contains(key) {
             key.backgroundColor = whiteKeyColor
         } else {

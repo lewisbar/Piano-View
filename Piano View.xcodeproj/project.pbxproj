@@ -117,6 +117,7 @@
 					B91B8F721CBAD2920067BA83 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9SPL76B3GR;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -280,6 +281,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.lennartwisbar.Piano-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -291,6 +293,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.lennartwisbar.Piano-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
