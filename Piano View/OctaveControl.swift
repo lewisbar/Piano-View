@@ -14,10 +14,10 @@ protocol OctaveControlDelegate {
 }
 */
 
-class OctaveControl: UISegmentedControl {
+@IBDesignable class OctaveControl: UISegmentedControl {
     
 //    var delegate: OctaveControlDelegate?
-    let octaves = ["1", "2", "3", "4", "5", "6"]
+//    let octaves = ["1", "2", "3", "4", "5", "6"]
     
     override init(items: [Any]?) {
         super.init(items: items)

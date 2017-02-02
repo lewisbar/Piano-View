@@ -37,7 +37,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-nb-FKP">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-nb-FKP" customClass="OctaveControl" customModule="Piano_View" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="350.5" width="320" height="29"/>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.074509803921568626" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
@@ -63,9 +63,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f2d-04-mH8" secondAttribute="bottom" id="nSS-Rv-G1F"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="pianoView" destination="f2d-04-mH8" id="UQe-1e-0c0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
