@@ -8,6 +8,8 @@
 
 import UIKit
 
+//TODO: Diese Klasse sollte IBDesignable sein und die Eigenschaften an die Subviews weitergeben. Die Subviews selbst können nicht IBDesignable sein, so weit ich es verstehe.
+
 @IBDesignable class PianoWithOctavesView: UIView {
 
     var octaveControl = OctaveControl(items: ["1", "2", "3", "4", "5", "6"])
