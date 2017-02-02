@@ -12,12 +12,13 @@ class ViewController: UIViewController {
 
     @IBOutlet var pianoView: PianoView!
     @IBOutlet var octaveControl: OctaveControl!
-    let pianoController = PianoController()
+    var pianoController: PianoController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pianoView.delegate = pianoController
+        pianoController = PianoController(withPianoView: pianoView, octaveControl: octaveControl)
+//        pianoView.delegate = pianoController
+//        octaveControl.delegate = pianoController
     }
 
     override func didReceiveMemoryWarning() {

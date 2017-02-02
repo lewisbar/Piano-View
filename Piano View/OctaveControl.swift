@@ -8,8 +8,15 @@
 
 import UIKit
 
+/*
+protocol OctaveControlDelegate {
+    func createOctaveControlOutlet(_ sender: OctaveControl)
+}
+*/
+
 class OctaveControl: UISegmentedControl {
     
+//    var delegate: OctaveControlDelegate?
     let octaves = ["1", "2", "3", "4", "5", "6"]
     
     override init(items: [Any]?) {

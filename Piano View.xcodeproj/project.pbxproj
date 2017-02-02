@@ -76,9 +76,9 @@
 		B91B8F8E1CBAD3480067BA83 /* Piano */ = {
 			isa = PBXGroup;
 			children = (
+				B90129AF1CC776BD003623C6 /* PianoController.swift */,
 				B91B8F881CBAD33C0067BA83 /* PianoModel.swift */,
 				B91B8F891CBAD33C0067BA83 /* PianoView.swift */,
-				B90129AF1CC776BD003623C6 /* PianoController.swift */,
 				B980378F1CDA4B8000073996 /* OctaveControl.swift */,
 			);
 			name = Piano;

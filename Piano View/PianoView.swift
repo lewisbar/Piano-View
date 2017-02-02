@@ -14,7 +14,7 @@
 import UIKit
 
 protocol PianoViewDelegate: class {
-    func createPianoViewOutlet(_ sender: PianoView)
+//    func createPianoViewOutlet(_ sender: PianoView)
     func touchesBegan(onKey: UIView)
     func touchesMoved(onKey: UIView)
     func touchesEnded(onKey: UIView)
@@ -94,7 +94,7 @@ protocol PianoViewDelegate: class {
             key.isUserInteractionEnabled = true
         }
         allKeys = blackKeys + whiteKeys
-        delegate?.createPianoViewOutlet(self)
+//        delegate?.createPianoViewOutlet(self)
         addTagsToKeys()
     }
     
