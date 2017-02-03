@@ -15,6 +15,25 @@ import UIKit
     var octaveControl = OctaveControl(items: ["1", "2", "3", "4", "5", "6"])
     var pianoView = PianoView()
     
+    //MARK: IBInspectable
+    @IBInspectable var whiteKeyColor: UIColor = UIColor.white {
+        didSet {
+            pianoView.whiteKeyColor = whiteKeyColor
+        }
+    }
+    @IBInspectable var whiteKeyBorderColor: UIColor = UIColor.black {
+        didSet {
+            pianoView.whiteKeyBorderColor = whiteKeyBorderColor
+        }
+    }
+    @IBInspectable var blackKeyColor: UIColor = UIColor.black {
+        didSet {
+            pianoView.blackKeyColor = blackKeyColor
+        }
+    }
+    
+    
+    
     //MARK: Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
