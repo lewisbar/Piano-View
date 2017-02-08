@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+//TODO: Hier PianoView instantiieren. Dann einen PianoController instantiieren und ihm dabei den PianoView übergeben. PianoView erstellt seinerseits KeysView und OctaveControl. PianoController kann über PianoView auf KeysView und OctaveControl zugreifen.
+    
     @IBOutlet var pianoView: PianoView!
-    @IBOutlet var octaveControl: OctaveControl!
-    let pianoController = PianoController()
+    var pianoController: PianoController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pianoView.delegate = pianoController
+        pianoController = PianoController(withPianoView: pianoView)
+        pianoView.keysView.delegate = pianoController
     }
 
     override func didReceiveMemoryWarning() {

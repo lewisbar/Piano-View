@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,61 +14,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Piano_View" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="LBl-Q9-RtI"/>
+                        <viewControllerLayoutGuide type="bottom" id="VTy-De-JmM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="LIB-0p-na7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-04-mH8" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="378.5" width="320" height="189.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="whiteKeyColor">
-                                        <color key="value" red="0.98919564485549927" green="0.90721452236175537" blue="0.75638604164123535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="blackKeyColor">
-                                        <color key="value" red="0.15282070636749268" green="0.096780598163604736" blue="0.0012983814813196659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="whiteKeyBorderColor">
-                                        <color key="value" red="0.15282070636749268" green="0.096780598163604736" blue="0.0012983814813196659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-R5-HFP" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="352" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.1052689701" green="0.83308464289999995" blue="0.99880862240000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-nb-FKP">
-                                <rect key="frame" x="0.0" y="350.5" width="320" height="29"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.074509803921568626" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <segments>
-                                    <segment title="1"/>
-                                    <segment title="2"/>
-                                    <segment title="3"/>
-                                    <segment title="4"/>
-                                    <segment title="5"/>
-                                    <segment title="6"/>
-                                </segments>
-                                <color key="tintColor" red="0.98431372549019602" green="0.88627450980392153" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="f2d-04-mH8" firstAttribute="top" secondItem="4cB-nb-FKP" secondAttribute="bottom" id="1NR-fW-Q8t"/>
-                            <constraint firstItem="4cB-nb-FKP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="33f-Pc-oKo"/>
-                            <constraint firstAttribute="height" secondItem="f2d-04-mH8" secondAttribute="height" multiplier="3" id="EV2-3L-dEO"/>
-                            <constraint firstItem="4cB-nb-FKP" firstAttribute="height" secondItem="f2d-04-mH8" secondAttribute="height" multiplier="0.15" id="JUo-tn-EBb"/>
-                            <constraint firstItem="f2d-04-mH8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rif-z5-OeP"/>
-                            <constraint firstAttribute="trailing" secondItem="4cB-nb-FKP" secondAttribute="trailing" id="XiH-EE-5O4"/>
-                            <constraint firstAttribute="trailing" secondItem="f2d-04-mH8" secondAttribute="trailing" id="gpJ-QX-GLX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f2d-04-mH8" secondAttribute="bottom" id="nSS-Rv-G1F"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="pianoView" destination="f2d-04-mH8" id="UQe-1e-0c0"/>
+                        <outlet property="pianoView" destination="YN0-R5-HFP" id="eFb-jC-AuU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="321"/>
+            <point key="canvasLocation" x="138.75" y="320.07042253521126"/>
         </scene>
     </scenes>
 </document>
