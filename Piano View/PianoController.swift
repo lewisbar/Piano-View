@@ -8,19 +8,14 @@
 
 import UIKit
 
-class PianoController: PianoViewDelegate {
+class PianoController: KeysViewDelegate {
     
     var pianoView: PianoView
-    var octaveControl: OctaveControl
     let pianoModel = PianoModel()
     let notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-//    var currentOctave: Int = {
-//        return octaveControl.selectedSegmentIndex
-//    }
     
-    init(withPianoView pianoView: PianoView, octaveControl: OctaveControl) {
+    init(withPianoView pianoView: PianoView) {
         self.pianoView = pianoView
-        self.octaveControl = octaveControl
     }
     
 /*    func createPianoViewOutlet(_ sender: PianoView) {
@@ -34,18 +29,18 @@ class PianoController: PianoViewDelegate {
     
     // TODO: Display the correct octave
     func touchesBegan(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(octaveControl.selectedSegmentIndex))
+        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
     }
     
     func touchesMoved(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(octaveControl.selectedSegmentIndex))
+        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
     }
     
     func touchesEnded(onKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(octaveControl.selectedSegmentIndex))
+        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
     }
     
     func touchesRemoved(fromKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(octaveControl.selectedSegmentIndex))
+        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
     }
 }
