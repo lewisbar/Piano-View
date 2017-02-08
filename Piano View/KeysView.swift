@@ -97,10 +97,18 @@ class KeysView: UIView {
     }
     
     func addTagsToKeys() {
-        for (index, key) in allKeys.enumerated() {
-            key.tag = index
-            print(index, key.tag)
-        }
+        c.tag = 0
+        cis.tag = 1
+        d.tag = 2
+        dis.tag = 3
+        e.tag = 4
+        f.tag = 5
+        fis.tag = 6
+        g.tag = 7
+        gis.tag = 8
+        a.tag = 9
+        ais.tag = 10
+        b.tag = 11
     }
 
     override func layoutSubviews() {
