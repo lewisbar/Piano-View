@@ -29,18 +29,18 @@ class PianoController: KeysViewDelegate {
     
     // TODO: Display the correct octave
     func touchesBegan(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
+        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesMoved(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
+        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesEnded(onKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
+        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesRemoved(fromKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex))
+        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
 }

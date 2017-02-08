@@ -91,6 +91,16 @@ class KeysView: UIView {
             key.isUserInteractionEnabled = true
         }
         allKeys = blackKeys + whiteKeys
+        //  black first so the black keys aren't "tapped through", letting the whiteKeys get the touch instead
+        
+        addTagsToKeys()
+    }
+    
+    func addTagsToKeys() {
+        for (index, key) in allKeys.enumerated() {
+            key.tag = index
+            print(index, key.tag)
+        }
     }
 
     override func layoutSubviews() {
