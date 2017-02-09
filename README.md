@@ -1,5 +1,5 @@
 # Piano-View
-A reusable piano view with six octaves. This is just the view part. You need some kind of audio engine to actually hear sound.  
+A reusable piano view with six octaves, one octave at a time, the octave is selected through a segmented control. This is just the view part. You need some kind of audio engine to actually hear sound.  
   
 To use it in your Xcode project:  
 A. Setting up the view:  
