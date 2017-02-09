@@ -14,11 +14,9 @@ A. Setting up the view:
 B. Setting up the controller part:  
 1. Open the assistent editor.  
 2. Ctrl-drag from your PianoView to your ViewController class to create an IBOutlet.  
-3. You need a class that adapts the PianoDelegate protocol:  
-      protocol PianoDelegate {  
+3. You need a class that adapts the PianoDelegate protocol with the following methods:  
           func play(note: String)  
-          func release(note: String)  
-      }  
+          func release(note: String)   
   This delegate will receive the played note as a String, for example C4, D#3 etc.  
   See the AudioEngine class in my project for a placeholder example.  
   Again, to actually hear sound, you need to take that String and generate the corresponding note yourself.  
