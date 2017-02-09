@@ -20,7 +20,7 @@ B. Setting up the controller part:
   This delegate will receive the played note as a String, for example C4, D#3 etc.  
   See the AudioEngine class in my project for a placeholder example.  
   Again, to actually hear sound, you need to take that String and generate the corresponding note yourself.  
-4. In your ViewController in viewDidLoad, create a PianoController(withPianoView: PianoView, delegate: PianoDelegate), handing it the PianoView which you created the outlet for, and an instance of the class you created that adapts the PianoDelegate protocol. See the ViewController in my project for a working example.  
+4. In your ViewController class in viewDidLoad, create a PianoController(withPianoView: PianoView, delegate: PianoDelegate), handing it the PianoView which you created the outlet for, and an instance of the class you created that adapts the PianoDelegate protocol. See the ViewController class in my project for a working example.  
   
 C. Behind the scenes:  
 The KeysView tells the PianoController when a key is pressed or released, slided upon or slided away from. And, of course, which key it was. This should also work for several keys pressed simultanously.  
