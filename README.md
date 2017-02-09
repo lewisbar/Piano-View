@@ -17,9 +17,9 @@ You can use this project as a starting point and replace or modify the placehold
 3. You need a class that adapts the PianoDelegate protocol with the following methods:  
   - func play(note: String)  
   - func release(note: String)   
-  This delegate will receive the played note as a String, for example C4, D#3 etc.  
-  See the AudioEngine class in my project for a placeholder example.  
-  Again, to actually hear sound, you need to take that String and generate the corresponding note yourself.  
+This delegate will receive the played note as a String, for example C4, D#3 etc.  
+See the AudioEngine class in my project for a placeholder example.  
+Again, to actually hear sound, you need to take that String and generate the corresponding note yourself.  
 4. In your ViewController class in viewDidLoad, create a PianoController(withPianoView: PianoView, delegate: PianoDelegate), handing it the PianoView which you created the outlet for, and an instance of the class you created that adapts the PianoDelegate protocol. See the ViewController class in my project for a working example.  
   
 ##C. Behind the scenes:  
