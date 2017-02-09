@@ -8,39 +8,37 @@
 
 import UIKit
 
+protocol PianoDelegate {
+    func play(note: String)
+    func release(note: String)
+}
+
 class PianoController: KeysViewDelegate {
     
-    var pianoView: PianoView
-    let pianoModel = PianoModel()
-    let notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+    private let pianoView: PianoView
+    private var delegate: PianoDelegate
+    private let notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
     
-    init(withPianoView pianoView: PianoView) {
+    init(withPianoView pianoView: PianoView, delegate: PianoDelegate) {
         self.pianoView = pianoView
+        self.delegate = delegate
+        pianoView.keysView.delegate = self
     }
     
-/*    func createPianoViewOutlet(_ sender: PianoView) {
-        pianoView = sender
-    }
-    
-    func createOctaveControlOutlet(_ sender: OctaveControl) {
-        octaveControl = sender
-    }
- */
-    
-    // TODO: Display the correct octave
+    // MARK: - KeysViewDelegate
     func touchesBegan(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
+        delegate.play(note: notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesMoved(onKey key: UIView) {
-        pianoModel.play(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
+        delegate.play(note: notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesEnded(onKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
+        delegate.release(note: notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
     
     func touchesRemoved(fromKey key: UIView) {
-        pianoModel.release(notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
+        delegate.release(note: notes[key.tag] + String(pianoView.octaveControl.selectedSegmentIndex+1))
     }
 }

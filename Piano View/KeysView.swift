@@ -7,9 +7,10 @@
 //
 
 /*
- Diese Klasse soll dem PianoController mitteilen, wenn eine Taste gedrückt oder losgelassen oder auf sie herauf- oder von ihr heruntergeslidet wird. Natürlich auch um welche Taste es sich handelt. Das gilt auch für mehrere Tasten, die gleichzeitig berührt werden. Die Entscheidung, was mit diesem Ereignis gemacht wird, trifft der Controller. Der Controller entscheidet z.B., ob mehrere Töne zusammen gespielt werden oder nur einer, ob man ein Glissando machen kann usw. Auf diese Weise ist diese Klasse für Pianos mit den verschiedensten Zwecken verwendbar.
- Aus Gründen der Wiederverwertbarkeit gehört der Oktavselektor nicht mit in diese Klasse, sondern wird separat eingebaut. Der Controller wertet dann die Werte beider Klassen aus.
-*/
+ This class tells the PianoController when a key is pressed or released, slided upon or slided away from. And, of course, which key it was. This should also work for several keys pressed simultanously.
+ The PianoController decides what to do with these events. For example, the controller decides if you can hear only one note at a time, if you can make a glissando etc. The controller can be modified or replaced to serve different purposes.
+ The PianoView prepares the KeysView optically. The PianoController then works with the KeysView.
+ */
 
 import UIKit
 
@@ -25,22 +26,21 @@ class KeysView: UIView {
     // MARK: - Instance Variables
     var delegate: KeysViewDelegate?
     
-    var allKeys = [UIView]()
-    var whiteKeys = [UIView]()
-    var blackKeys = [UIView]()
-    var c = UIView()
-    var cis = UIView()
-    var d = UIView()
-    var dis = UIView()
-    var e = UIView()
-    var f = UIView()
-    var fis = UIView()
-    var g = UIView()
-    var gis = UIView()
-    var a = UIView()
-    var ais = UIView()
-    var b = UIView()
-    //TODO?: No need to name the keys. I could refactor this, using loops in addKeys(). But giving the keys individual names could be more readable and easier to understand.
+    private var allKeys = [UIView]()
+    private var whiteKeys = [UIView]()
+    private var blackKeys = [UIView]()
+    private var c = UIView()
+    private var cis = UIView()
+    private var d = UIView()
+    private var dis = UIView()
+    private var e = UIView()
+    private var f = UIView()
+    private var fis = UIView()
+    private var g = UIView()
+    private var gis = UIView()
+    private var a = UIView()
+    private var ais = UIView()
+    private var b = UIView()
     
     var whiteKeyColor: UIColor = UIColor.white {
         didSet {
@@ -61,7 +61,7 @@ class KeysView: UIView {
         }
     }
     
-    //MARK: - Initializers
+    // MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addKeys()
@@ -72,8 +72,8 @@ class KeysView: UIView {
         addKeys()
     }
     
-    //MARK: - Setup
-    func addKeys() {
+    // MARK: - Setup
+    private func addKeys() {
         // Add white keys.
         whiteKeys = [c, d, e, f, g, a, b]
         for key in whiteKeys {
@@ -91,12 +91,13 @@ class KeysView: UIView {
             key.isUserInteractionEnabled = true
         }
         allKeys = blackKeys + whiteKeys
-        //  black first so the black keys aren't "tapped through", letting the whiteKeys get the touch instead
+        //  Black first so the black keys aren't "tapped through", letting the whiteKeys "rob" the touch event.
         
         addTagsToKeys()
     }
     
-    func addTagsToKeys() {
+    private func addTagsToKeys() {
+        // Tags are for the controller to work with. They are the only way to get the keys in the expected order, because allKeys is ordered black keys first due to correct handling of touch events.
         c.tag = 0
         cis.tag = 1
         d.tag = 2
@@ -116,7 +117,7 @@ class KeysView: UIView {
         layoutBlackKeys()
     }
     
-    func layoutWhiteKeys() {
+    private func layoutWhiteKeys() {
         let whiteKeyWidth = frame.size.width/7
         let whiteKeyHeight = frame.size.height
         var whiteKeyFrame = CGRect(x: 0, y: 0, width: whiteKeyWidth, height: whiteKeyHeight)
@@ -128,7 +129,7 @@ class KeysView: UIView {
         }
     }
     
-    func layoutBlackKeys() {
+    private func layoutBlackKeys() {
         let whiteKeyWidth = frame.size.width/7
         let whiteKeyHeight = frame.size.height
         let blackKeyWidth = whiteKeyWidth * 0.8
@@ -148,7 +149,7 @@ class KeysView: UIView {
         }
     }
     
-    //MARK: - Handle touch events
+    // MARK: - Handle touch events
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 
@@ -208,12 +209,12 @@ class KeysView: UIView {
         }
     }
     
-    //MARK: - Color changes
-    func setKeyToPressedState(_ key: UIView) {
+    // MARK: - Color changes
+    private func setKeyToPressedState(_ key: UIView) {
         key.backgroundColor = UIColor.gray
     }
     
-    func setKeyToReleasedState(_ key: UIView) {
+    private func setKeyToReleasedState(_ key: UIView) {
         if whiteKeys.contains(key) {
             key.backgroundColor = whiteKeyColor
         } else {

@@ -13,7 +13,7 @@ import UIKit
     var octaveControl = UISegmentedControl(items: ["1", "2", "3", "4", "5", "6"])
     var keysView = KeysView()
     
-    //MARK: IBInspectable
+    //MARK: - IBInspectable
     override var backgroundColor: UIColor? {
         didSet {
             keysView.whiteKeyColor = backgroundColor ?? UIColor.white
@@ -28,7 +28,7 @@ import UIKit
         }
     }
     
-    //MARK: Initializers
+    //MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubviews()
@@ -39,7 +39,7 @@ import UIKit
         addSubviews()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         // Remove rounded corners
         octaveControl.layer.borderWidth = 1.5
         
@@ -53,7 +53,7 @@ import UIKit
         addSubview(keysView)
     }
     
-    //MARK: Layout
+    //MARK: - Layout
     override func layoutSubviews() {
         
         let octaveControlHeight = octaveControl.intrinsicContentSize.height

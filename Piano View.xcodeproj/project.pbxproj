@@ -13,7 +13,7 @@
 		B91B8F7C1CBAD2930067BA83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7A1CBAD2930067BA83 /* Main.storyboard */; };
 		B91B8F7E1CBAD2930067BA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7D1CBAD2930067BA83 /* Assets.xcassets */; };
 		B91B8F811CBAD2930067BA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91B8F7F1CBAD2930067BA83 /* LaunchScreen.storyboard */; };
-		B91B8F8B1CBAD33C0067BA83 /* PianoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F881CBAD33C0067BA83 /* PianoModel.swift */; };
+		B91B8F8B1CBAD33C0067BA83 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F881CBAD33C0067BA83 /* AudioEngine.swift */; };
 		B91B8F8C1CBAD33C0067BA83 /* KeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B8F891CBAD33C0067BA83 /* KeysView.swift */; };
 		B9D23C601E430F0D0025516F /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D23C5F1E430F0D0025516F /* PianoView.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		B91B8F7D1CBAD2930067BA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B91B8F801CBAD2930067BA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B91B8F821CBAD2930067BA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B91B8F881CBAD33C0067BA83 /* PianoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoModel.swift; sourceTree = "<group>"; };
+		B91B8F881CBAD33C0067BA83 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		B91B8F891CBAD33C0067BA83 /* KeysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysView.swift; sourceTree = "<group>"; };
 		B9D23C5F1E430F0D0025516F /* PianoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				B91B8F8E1CBAD3480067BA83 /* Piano */,
+				B91B8F881CBAD33C0067BA83 /* AudioEngine.swift */,
 				B91B8F781CBAD2930067BA83 /* ViewController.swift */,
 				B91B8F7A1CBAD2930067BA83 /* Main.storyboard */,
 				B9D23C5E1E430DE90025516F /* Others */,
@@ -73,10 +74,9 @@
 		B91B8F8E1CBAD3480067BA83 /* Piano */ = {
 			isa = PBXGroup;
 			children = (
-				B91B8F881CBAD33C0067BA83 /* PianoModel.swift */,
 				B90129AF1CC776BD003623C6 /* PianoController.swift */,
 				B9D23C5F1E430F0D0025516F /* PianoView.swift */,
-				B9D23C611E4640AA0025516F /* Subviews */,
+				B91B8F891CBAD33C0067BA83 /* KeysView.swift */,
 			);
 			name = Piano;
 			sourceTree = "<group>";
@@ -90,14 +90,6 @@
 				B91B8F821CBAD2930067BA83 /* Info.plist */,
 			);
 			name = Others;
-			sourceTree = "<group>";
-		};
-		B9D23C611E4640AA0025516F /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				B91B8F891CBAD33C0067BA83 /* KeysView.swift */,
-			);
-			name = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +170,7 @@
 				B91B8F8C1CBAD33C0067BA83 /* KeysView.swift in Sources */,
 				B90129B01CC776BD003623C6 /* PianoController.swift in Sources */,
 				B91B8F771CBAD2930067BA83 /* AppDelegate.swift in Sources */,
-				B91B8F8B1CBAD33C0067BA83 /* PianoModel.swift in Sources */,
+				B91B8F8B1CBAD33C0067BA83 /* AudioEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
