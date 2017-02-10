@@ -1,15 +1,14 @@
 # Piano-View
 A reusable piano view with six octaves, one octave at a time, the octave is selected through a segmented control. This is just the view part, including the handling of touch events. You need some kind of audio engine to actually hear sound. If you use the project as it is, the names of the notes you are playing or releasing will just be printed to the console.  
-You can use this project as a starting point and replace or modify the placeholder parts (bacically the AudioEngine class and maybe the ViewController class). Or, to use it in your Xcode project:  
+You can use this project as a starting point and replace or modify the placeholder parts (above all, the AudioEngine class). Or, to use it in your Xcode project:  
   
 ##A. Setting up the view:  
 1. Put the PianoController, PianoView and KeysView classes (i.e. everything in the group "Piano") into your project.  
 2. Drag a view into your storyboard and pin it with AutoLayout as you wish. This will be your piano view.  
 3. In the identity inspector, make it a PianoView.  
-4. Once the storyboard has reloaded, a piano should appear.  
+4. Once the storyboard has reloaded, a piano with a segmented control above it should appear.  
 5. In the attributes inspector, change the background color to change the color of the white keys.  
-6. Change the tint color to change the color of the black keys.  
-7. The segmented control will use the same colors as the keys.  
+6. Change the tint color to change the color of the black keys. The segmented control will use the same colors as the keys.  
   
 ##B. Setting up the controller part:  
 1. Open the assistent editor.  
