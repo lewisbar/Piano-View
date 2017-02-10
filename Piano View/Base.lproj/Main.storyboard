@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-R5-HFP" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="352" width="320" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-R5-HFP" customClass="PianoView" customModule="Piano_View" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="341" width="320" height="227"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1052689701" green="0.83308464289999995" blue="0.99880862240000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VTy-De-JmM" firstAttribute="top" secondItem="YN0-R5-HFP" secondAttribute="bottom" id="26c-NR-Udo"/>
+                            <constraint firstItem="YN0-R5-HFP" firstAttribute="height" secondItem="LIB-0p-na7" secondAttribute="height" multiplier="0.4" id="OY6-OW-cjg"/>
+                            <constraint firstItem="YN0-R5-HFP" firstAttribute="leading" secondItem="LIB-0p-na7" secondAttribute="leading" id="tvr-qK-cQI"/>
+                            <constraint firstAttribute="trailing" secondItem="YN0-R5-HFP" secondAttribute="trailing" id="zCK-7l-DHm"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pianoView" destination="YN0-R5-HFP" id="eFb-jC-AuU"/>
